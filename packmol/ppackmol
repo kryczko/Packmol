@@ -1,0 +1,13 @@
+#!/bin/sh
+#
+# Path to packmol executable (change it if you want,
+# a blank line suposes that it is in the path):
+#
+path=
+export OMP_NUM_THREADS=$1
+ulimit -s unlimited
+if [ "$path" \> " " ]; then
+  $path/packmol < $2
+else
+  packmol < $2
+fi
